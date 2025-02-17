@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>배우 리스트</h1>
+  <table>
+    <tr>
+      <th scope="col">이름</td>
+      <th scope="col">나이</td>
+      <th scope="col">커리어</td>
+    </tr>
+
+    <% actors.forEach(actor=>{ %>
+      <tr>
+        <td>
+          <%= actor.userName %>
+        </td>
+        <td>
+          <%= actor.age %>
+        </td>
+        <td>
+          <% let total=[] %>
+            <% actor.careers.map((x)=>{ %>
+              <% total.push(x.title) %>
+                <% }); %>
+                  <%= total.join(','); %>
+        </td>
+      </tr>
+      <% }) %>
+  </table>
+  <br />
+  <a href="/actors/man">남자 배우 리스트</a><br />
+  <a href="/actors/woman">여자 배우 리스트</a><br />
+  <a href="/actors/sameAct">같은 드라마||같은 영화||같은 뮤지컬 나온 배우들 리스트</a><br />
+  <a href="/actors/movie">영화</a><br />
+  <a href="/actors/drama">드라마</a>
+</body>
+
+</html>
