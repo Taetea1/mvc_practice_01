@@ -8,9 +8,8 @@
   <title>Document</title>
 </head>
 
-
 <body>
-  <h1>배우 리스트</h1>
+  <h1>여자 배우 리스트</h1>
   <table>
     <tr>
       <th rowspan="2">이름</th>
@@ -24,7 +23,7 @@
       <td>성별</td>
     </tr>
 
-    <% actors.forEach(actor=>{ %>
+    <% womanactors.forEach(actor=>{ %>
       <tr>
         <td rowspan="<%= actor.careers.length+1 %>">
           <%= actor.userName %>
@@ -55,11 +54,7 @@
           <% }) %>
   </table>
   <br />
-  <a href="/actors/man">남자 배우 리스트</a><br />
-  <a href="/actors/woman">여자 배우 리스트</a><br />
-  <a href="/actors/sameAct">같은 드라마||같은 영화||같은 뮤지컬 나온 배우들 리스트</a><br />
-  <a href="/actors/movie">영화</a><br />
-  <a href="/actors/drama">드라마</a>
+  <a href="/actors">뒤로 가기</a><br />
 </body>
 
 </html>

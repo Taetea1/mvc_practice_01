@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/public/css/global.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>드라마 배우 리스트</h1>
+  <br />
+  <table>
+    <tr>
+      <th>카테고리</th>
+      <th>제목</th>
+      <th>배우 이름</th>
+      <th>역할</th>
+    </tr>
+    <% dramaactors.forEach(actor=>{ %>
+
+      <tr>
+        <td>
+          <%= actor.category %>
+        </td>
+        <td>
+          <%= actor.title %>
+        </td>
+        <td>
+          <%= actor.userName %>
+        </td>
+        <td>
+          <%= actor.role %>
+        </td>
+      </tr>
+
+      <% }); %>
+  </table>
+  <br />
+  <a href="/actors">뒤로 가기</a><br />
+</body>
+
+
+</html>

@@ -2,37 +2,56 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="/public/css/global.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 
 <body>
-  <h1>배우 리스트</h1>
+  <h1>남자 배우 리스트</h1>
   <table>
     <tr>
-      <th scope="col">이름</td>
-      <th scope="col">나이</td>
-      <th scope="col">커리어</td>
+      <th rowspan="2">이름</th>
+      <th rowspan="2">나이</th>
+      <th colspan="4">커리어</th>
+    </tr>
+    <tr>
+      <td>카테고리</td>
+      <td>제목</td>
+      <td>역할</td>
+      <td>성별</td>
     </tr>
 
     <% manactors.forEach(actor=>{ %>
       <tr>
-        <td>
+        <td rowspan="<%= actor.careers.length+1 %>">
           <%= actor.userName %>
         </td>
-        <td>
+        <td rowspan="<%= actor.careers.length+1 %>">
           <%= actor.age %>
         </td>
-        <td>
-          <% let total=[] %>
-            <% actor.careers.map((x)=>{ %>
-              <% total.push(x.title) %>
-                <% }); %>
-                  <%= total.join(','); %>
-        </td>
       </tr>
-      <% }) %>
+
+      <% actor.careers.map((x)=>{ %>
+        <tr>
+          <td>
+            <%= x.category %>
+          </td>
+          <td>
+            <%= x.title %>
+          </td>
+          <td>
+            <%= x.role %>
+          </td>
+          <td>
+            <%= x.gender %>
+          </td>
+        </tr>
+        <% }); %>
+
+
+          <% }) %>
   </table>
   <br />
   <a href="/actors">뒤로 가기</a><br />

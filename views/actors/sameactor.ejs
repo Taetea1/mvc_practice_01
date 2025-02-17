@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/public/css/global.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>동료 배우 리스트</h1>
+  <br />
+  <h2>드라마</h2>
+  <table>
+    <tr>
+      <th>카테고리</th>
+      <th>제목</th>
+      <th>배우 이름</th>
+      <th>역할</th>
+    </tr>
+    <% sameactors.forEach(actor=>{ %>
+      <% if(actor.category==="drama" ){ %>
+        <tr>
+          <td>
+            <%= actor.category %>
+          </td>
+          <td>
+            <%= actor.title %>
+          </td>
+          <td>
+            <%= actor.userName %>
+          </td>
+          <td>
+            <%= actor.role %>
+          </td>
+        </tr>
+
+        <% } %>
+
+          <% }); %>
+  </table>
+
+  <h2>영화</h2>
+  <table>
+    <tr>
+      <th>카테고리</th>
+      <th>제목</th>
+      <th>배우 이름</th>
+      <th>역할</th>
+    </tr>
+    <% sameactors.forEach(actor=>{ %>
+      <% if(actor.category==="movie" ){ %>
+        <tr>
+          <td>
+            <%= actor.category %>
+          </td>
+          <td>
+            <%= actor.title %>
+          </td>
+          <td>
+            <%= actor.userName %>
+          </td>
+          <td>
+            <%= actor.role %>
+          </td>
+        </tr>
+
+        <% } %>
+
+          <% }); %>
+  </table>
+
+  <h2>뮤지컬</h2>
+  <table>
+    <tr>
+      <th>카테고리</th>
+      <th>제목</th>
+      <th>배우 이름</th>
+      <th>역할</th>
+    </tr>
+    <% sameactors.forEach(actor=>{ %>
+      <% if(actor.category==="musical" ){ %>
+        <tr>
+          <td>
+            <%= actor.category %>
+          </td>
+          <td>
+            <%= actor.title %>
+          </td>
+          <td>
+            <%= actor.userName %>
+          </td>
+          <td>
+            <%= actor.role %>
+          </td>
+        </tr>
+
+        <% } %>
+
+          <% }); %>
+  </table>
+  <br />
+  <a href="/actors">뒤로 가기</a><br />
+</body>
+
+
+</html>
